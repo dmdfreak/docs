@@ -40,7 +40,7 @@ How to run it as a one-off:
 * First, make sure you have the latest version of oref0: `npm list -g oref0 | egrep oref0@0.4.[0-9] || (echo Installing latest oref0 package && sudo npm install -g oref0)`
 * Install jq: `sudo apt-get install jq`
 * Make two copies of your profile.json, one to be the starting point for autotune, and one to provide the pump baseline for enforcing the min/max limits: `cd ~/myopenaps/settings/ && cp profile.json autotune.json && cp profile.json pumpprofile.json`
-* Run `oref0-autotune --dir=~/myopenaps --ns-host=https://mynightscout.azurewebsites.net --start-date=YYYY-MM-DD` (obviously, sub in your NS url and the start date you want to start with. Try 1 day first before moving on to 1 week and 1 month to better troubleshoot).
+* Run `oref0-autotune --dir=~/myopenaps --ns-host=https://YOUR_SITE_NAME_HERE.azurewebsites.net --start-date=YYYY-MM-DD` (obviously, sub in your NS url and the start date you want to start with. Try 1 day first before moving on to 1 week and 1 month to better troubleshoot).
 
 If you have issues running it, questions about reviewing the data, or want to provide input for direction of the feature, please comment on [this issue in Github](https://github.com/openaps/oref0/issues/261).
 
@@ -172,7 +172,7 @@ Every comma, quote mark, and bracket matter on this file, so please double-check
 * F. Create a third file from the command line by running: `cp profile.json autotune.json`
 
 **Step 4: Run autotune on retrospective data from Nightscout**
-* Run `oref0-autotune --dir=~/myopenaps --ns-host=https://mynightscout.azurewebsites.net --start-date=YYYY-MM-DD`
+* Run `oref0-autotune --dir=~/myopenaps --ns-host=https://YOUR_SITE_NAME_HERE.azurewebsites.net --start-date=YYYY-MM-DD`
 * ^ Sub in your Nightscout URL.
 * Start with one day to confirm that it works, first. Then run it for one week, and then one month. Compare results and see if the numbers are consistent or changing, and see how that aligns with your gut feeling on whether your basals, ISF, and carb ratio was correct.
 * If you want to run dates in the past, add the following: --end-date=YYYY-MM-DD (otherwise, it will just default to ending yesterday).
